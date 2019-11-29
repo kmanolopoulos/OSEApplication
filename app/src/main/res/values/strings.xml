@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">OSE Application</string>
+    <string name="search">Search</string>
+    <string name="favourite">Favourite</string>
+    <string name="about">About</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="date">Date</string>
+    <string name="invalid_data">Invalid data entered</string>
+
+</resources>
