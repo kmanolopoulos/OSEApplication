@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter :
+class RecyclerViewAdapter(val items : ArrayList<TimesheetEntry>) :
     RecyclerView.Adapter<RecyclerViewAdapterViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -18,10 +18,13 @@ class RecyclerViewAdapter :
     }
 
     override fun onBindViewHolder(holder: RecyclerViewAdapterViewHolder, position: Int) {
-        TODO("not implemented")
+        holder.stationFrom.text = items.get(position).stationFrom
+        holder.stationTo.text = items.get(position).stationTo
+        holder.timeFrom.text = items.get(position).timeFrom
+        holder.timeTo.text = items.get(position).timeTo
     }
 
     override fun getItemCount(): Int {
-        TODO("not implemented")
+        return items.size
     }
 }
