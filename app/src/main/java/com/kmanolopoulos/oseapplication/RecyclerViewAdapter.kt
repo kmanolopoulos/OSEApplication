@@ -1,7 +1,6 @@
 package com.kmanolopoulos.oseapplication
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
@@ -25,9 +24,4 @@ class RecyclerViewAdapter :
     override fun getItemCount(): Int {
         TODO("not implemented")
     }
-}
-
-
-class RecyclerViewAdapterViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-
 }
