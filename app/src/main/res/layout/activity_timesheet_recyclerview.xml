@@ -11,37 +11,41 @@
         android:id="@+id/txt_search_station_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toStartOf="@id/txt_search_station_to"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Alexandroupoli" />
+        tools:text="Station From" />
 
     <TextView
         android:id="@+id/txt_search_station_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toStartOf="@id/txt_search_time_from"
         app:layout_constraintStart_toEndOf="@id/txt_search_station_from"
         app:layout_constraintTop_toTopOf="@id/txt_search_station_from"
-        tools:text="Thessaloniki" />
+        tools:text="Station To" />
 
     <TextView
         android:id="@+id/txt_search_time_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toStartOf="@id/txt_search_time_to"
         app:layout_constraintStart_toEndOf="@id/txt_search_station_to"
         app:layout_constraintTop_toTopOf="@id/txt_search_station_from"
-        tools:text="XX:XX" />
+        tools:text="Departure" />
 
     <TextView
         android:id="@+id/txt_search_time_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toStartOf="@id/img_search_icon"
         app:layout_constraintStart_toEndOf="@id/txt_search_time_from"
         app:layout_constraintTop_toTopOf="@id/txt_search_station_from"
-        tools:text="XX:XX" />
+        tools:text="Arrival" />
 
     <ImageView
         android:id="@+id/img_search_icon"

@@ -37,11 +37,13 @@ class SearchActivity : AppCompatActivity() {
             )
         )
 
-        // Set spinner for "to" view
-        spn_search_to.adapter = ArrayAdapter<String>(
-            this,
-            android.R.layout.simple_spinner_dropdown_item,
-            stations
+        // Set suggestions for "to" view
+        atv_search_to.setAdapter(
+            ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_dropdown_item_1line,
+                stations
+            )
         )
     }
 
@@ -59,7 +61,7 @@ class SearchActivity : AppCompatActivity() {
                     )
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_TO",
-                        spn_search_to.selectedItem.toString()
+                        atv_search_to.text.toString()
                     )
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_DATE",
@@ -105,8 +107,8 @@ class SearchActivity : AppCompatActivity() {
 
         // Check
         if ((atv_search_from.text.toString() !in stations) ||
-            (spn_search_to.selectedItem.toString() !in stations) ||
-            (atv_search_from.text.toString().equals(spn_search_to.selectedItem.toString())) ||
+            (atv_search_to.text.toString() !in stations) ||
+            (atv_search_from.text.toString().equals(atv_search_to.text.toString())) ||
             (txt_search_date.text.toString().isEmpty())
         ) {
             return false

@@ -8,5 +8,9 @@
     <string name="to">To:</string>
     <string name="date">Date</string>
     <string name="invalid_data">Invalid data entered</string>
+    <string name="station_from">Station from</string>
+    <string name="station_to">Station to</string>
+    <string name="departure">Departure</string>
+    <string name="arrival">Arrival</string>
 
 </resources>

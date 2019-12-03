@@ -17,10 +17,19 @@ class TimesheetActivity : AppCompatActivity() {
 
         val timesheetEntries: ArrayList<TimesheetEntry> = ArrayList()
 
-        timesheetEntries.add(TimesheetEntry("Alexandroupoli","Thessaloniki","12:52","16:28"))
-        timesheetEntries.add(TimesheetEntry("Alexandroupoli","Thessaloniki","13:52","17:28"))
-        timesheetEntries.add(TimesheetEntry("Alexandroupoli","Thessaloniki","14:52","18:28"))
-        timesheetEntries.add(TimesheetEntry("Alexandroupoli","Thessaloniki","15:52","19:28"))
+        timesheetEntries.add(
+            TimesheetEntry(
+                getString(R.string.station_from),
+                getString(R.string.station_to),
+                getString(R.string.departure),
+                getString(R.string.arrival)
+            )
+        )
+        timesheetEntries.add(TimesheetEntry("Alexandroupoli", "Thessaloniki", "12:52", "16:28"))
+        timesheetEntries.add(TimesheetEntry("Sfendali", "Athens", "12:52", "13:35"))
+        timesheetEntries.add(TimesheetEntry("Alexandroupoli", "Thessaloniki", "13:52", "17:28"))
+        timesheetEntries.add(TimesheetEntry("Sfendali", "Athens", "14:52", "18:28"))
+        timesheetEntries.add(TimesheetEntry("Alexandroupoli", "Thessaloniki", "15:52", "19:28"))
 
         rec_search_layout.layoutManager = LinearLayoutManager(this)
         rec_search_layout.adapter = RecyclerViewAdapter(timesheetEntries)
