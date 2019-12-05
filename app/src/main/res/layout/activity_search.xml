@@ -4,80 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:padding="32dp"
     tools:context=".SearchActivity">
 
     <ImageView
         android:id="@+id/img_search_logo"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="32dp"
         android:src="@drawable/ose_logo_1200px"
+        app:layout_constraintBottom_toTopOf="@id/txt_search_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
-    <TextView
-        android:id="@+id/txt_search_from"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/txt_search_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/from"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/atv_search_from"
-        app:layout_constraintStart_toStartOf="@id/img_search_logo"
-        app:layout_constraintTop_toTopOf="@id/atv_search_from" />
-
-    <AutoCompleteTextView
-        android:id="@+id/atv_search_from"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@id/atv_search_to"
-        app:layout_constraintEnd_toEndOf="@id/img_search_logo"
-        app:layout_constraintStart_toEndOf="@id/txt_search_from" />
-
-    <TextView
-        android:id="@+id/txt_search_to"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/to"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/atv_search_to"
-        app:layout_constraintStart_toStartOf="@id/img_search_logo"
-        app:layout_constraintTop_toTopOf="@id/atv_search_to" />
-
-    <AutoCompleteTextView
-        android:id="@+id/atv_search_to"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/txt_search_date"
-        app:layout_constraintEnd_toEndOf="@id/img_search_logo"
-        app:layout_constraintStart_toStartOf="@id/atv_search_from" />
-
-    <TextView
-        android:id="@+id/txt_search_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:textAlignment="center"
-        android:height="30dp"
-        android:hint="@string/date"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/btn_search_search"
-        app:layout_constraintEnd_toEndOf="@id/atv_search_to"
-        app:layout_constraintStart_toStartOf="@id/txt_search_from" />
-
-    <Button
-        android:id="@+id/btn_search_search"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/img_search_logo"
-        app:layout_constraintStart_toStartOf="@id/img_search_logo" />
+        app:layout_constraintTop_toBottomOf="@id/img_search_logo"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/txt_search_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/atv_search_from"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/atv_search_from" />
+
+        <AutoCompleteTextView
+            android:id="@+id/atv_search_from"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toTopOf="@id/atv_search_to"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_search_from"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_search_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/atv_search_to"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/atv_search_to" />
+
+        <AutoCompleteTextView
+            android:id="@+id/atv_search_to"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/txt_search_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/atv_search_from"
+            app:layout_constraintTop_toBottomOf="@id/atv_search_from" />
+
+        <TextView
+            android:id="@+id/txt_search_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:hint="@string/date"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_search_search"
+            app:layout_constraintEnd_toEndOf="@id/atv_search_to"
+            app:layout_constraintStart_toStartOf="@id/txt_search_from"
+            app:layout_constraintTop_toBottomOf="@id/atv_search_to" />
+
+        <Button
+            android:id="@+id/btn_search_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="@string/search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_search_date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

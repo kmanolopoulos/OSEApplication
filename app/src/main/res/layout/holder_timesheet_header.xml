@@ -9,49 +9,45 @@
 
     <TextView
         android:id="@+id/txt_search_station_from"
+        style="@style/AppTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/station_from"
-        android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/txt_search_station_to"
-        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintHorizontal_weight="@dimen/timesheet_station_weight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_search_station_to"
+        style="@style/AppTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/station_to"
-        android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/txt_search_time_from"
-        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintHorizontal_weight="@dimen/timesheet_station_weight"
         app:layout_constraintStart_toEndOf="@id/txt_search_station_from"
         app:layout_constraintTop_toTopOf="@id/txt_search_station_from" />
 
     <TextView
         android:id="@+id/txt_search_time_from"
+        style="@style/AppTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/departure"
-        android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/txt_search_time_to"
-        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintHorizontal_weight="@dimen/timesheet_time_weight"
         app:layout_constraintStart_toEndOf="@id/txt_search_station_to"
         app:layout_constraintTop_toTopOf="@id/txt_search_station_from" />
 
     <TextView
         android:id="@+id/txt_search_time_to"
+        style="@style/AppTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/arrival"
-        android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/img_search_icon"
-        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintHorizontal_weight="@dimen/timesheet_time_weight"
         app:layout_constraintStart_toEndOf="@id/txt_search_time_from"
         app:layout_constraintTop_toTopOf="@id/txt_search_station_from" />
 

@@ -2,4 +2,6 @@
 
 
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="timesheet_station_weight">4</dimen>
+    <dimen name="timesheet_time_weight">2</dimen>
 </resources>
