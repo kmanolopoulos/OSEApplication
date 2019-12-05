@@ -1,6 +1,6 @@
 package com.kmanolopoulos.oseapplication
 
-data class TimesheetEntry(
+data class TimesheetDataEntry(
     var stationFrom: String,
     var stationTo: String,
     var timeFrom: String,
