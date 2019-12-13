@@ -21,10 +21,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/search"
-        app:layout_constraintBottom_toTopOf="@id/btn_main_favourite"
+        app:layout_constraintBottom_toTopOf="@id/btn_main_synchronize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_main_logo" />
+
+    <Button
+        android:id="@+id/btn_main_synchronize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/synchronize"
+        app:layout_constraintBottom_toTopOf="@id/btn_main_favourite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btn_main_favourite"

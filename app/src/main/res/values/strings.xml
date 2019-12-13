@@ -2,6 +2,7 @@
 
     <string name="app_name">OSE Application</string>
     <string name="search">Search</string>
+    <string name="synchronize">Synchronize</string>
     <string name="favourite">Favourite</string>
     <string name="about">About</string>
     <string name="from">From:</string>
