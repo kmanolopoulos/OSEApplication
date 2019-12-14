@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_main_about).setOnClickListener { onChoice(it) }
     }
 
-    fun onChoice(view: View) {
+    private fun onChoice(view: View) {
         var intent: Intent
 
         when (view.id) {
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.btn_main_synchronize -> {
-
+                TimesheetDownload(this).startDownload()
             }
             R.id.btn_main_favourite -> {
 
