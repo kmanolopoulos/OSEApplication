@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
+import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import java.io.File
 
@@ -38,6 +39,9 @@ class TimesheetDownload(context: Context) {
     // Method to start downloading of JSON file with timesheets
     //
     fun startDownload() {
+        // Remove temporary file if it exists
+        dldFileClass.delete()
+
         // Download request attributes
         val request =
             DownloadManager.Request(Uri.parse(dldTimesheet))
@@ -55,6 +59,9 @@ class TimesheetDownload(context: Context) {
         // Enqueuing and starting download
         dldId = manager.enqueue(request)
 
+        // Show progress bar during download
+        (dldContext as MainActivity).setProgressStatus(true, dldContext.resources.getString(R.string.downloading))
+
         // Register a listener for catching download finish
         dldContext.registerReceiver(
             onDownloadComplete,
@@ -69,7 +76,19 @@ class TimesheetDownload(context: Context) {
         // Unregister the listener for catching download finish
         dldContext.unregisterReceiver(onDownloadComplete)
 
+        // Update progress bar after download & before process
+        (dldContext as MainActivity).setProgressStatus(true, dldContext.resources.getString(R.string.processing))
+
         // Update database with JSON data
-        DataFileBrowser(dldContext).parseJsonData(dldFileClass)
+        val message = DataFileBrowser(dldContext).parseJsonData(dldFileClass)
+
+        // Hide progress bar after process
+        dldContext.setProgressStatus(false, "")
+
+        // Remove temporary file after it was used
+        dldFileClass.delete()
+
+        // Show message of synchronization
+        Toast.makeText(dldContext, message, Toast.LENGTH_SHORT).show()
     }
 }

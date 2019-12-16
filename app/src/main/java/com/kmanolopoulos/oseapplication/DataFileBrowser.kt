@@ -5,12 +5,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import java.io.File
-import java.io.InputStreamReader
-import java.io.Reader
-import java.nio.charset.StandardCharsets
 
 
-class DataFileBrowser(context: Context) :
+class DataFileBrowser(private val context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     // Called when database is created
@@ -20,7 +17,16 @@ class DataFileBrowser(context: Context) :
     override fun onUpgrade(dbase: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {}
 
     // Parse JSON file data to rebuild database data
-    fun parseJsonData(jsonFile: File) {}
+    fun parseJsonData(jsonFile: File): String {
+        try {
+            jsonFile.forEachLine { Log.v("FILE", it) }
+        } catch (e: Exception) {
+            return context.resources.getString(R.string.file_not_downloaded)
+        }
+
+        return context.resources.getString(R.string.file_wrong_format)
+        //return context.resources.getString(R.string.file_ok)
+    }
 
     // Constants used for calling base class constructor
     companion object {

@@ -13,5 +13,10 @@
     <string name="station_to">Station to</string>
     <string name="departure">Depart</string>
     <string name="arrival">Arrival</string>
+    <string name="downloading">Downloading timesheets</string>
+    <string name="processing">Processing timesheets</string>
+    <string name="file_not_downloaded">File could not be downloaded</string>
+    <string name="file_wrong_format">File could not be parsed correctly</string>
+    <string name="file_ok">Synchronization success</string>
 
 </resources>
