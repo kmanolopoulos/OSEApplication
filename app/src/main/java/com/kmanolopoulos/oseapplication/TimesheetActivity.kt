@@ -15,20 +15,15 @@ class TimesheetActivity : AppCompatActivity() {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
+        val stationFrom = intent.getStringExtra("TimesheetActivity.SEARCH_FROM") ?: ""
+        val stationTo = intent.getStringExtra("TimesheetActivity.SEARCH_TO") ?: ""
+        val date = intent.getStringExtra("TimesheetActivity.SEARCH_DATE") ?: ""
         val timesheetEntries: ArrayList<Any> = ArrayList()
 
         timesheetEntries.add(TimesheetHeaderEntry())
-        timesheetEntries.add(TimesheetDataEntry("Alexandroupoli", "Thessaloniki", "12:52", "16:28"))
-        timesheetEntries.add(TimesheetDataEntry("Sfendali", "Athens", "12:52", "13:35"))
-        timesheetEntries.add(TimesheetDataEntry("Alexandroupoli", "Thessaloniki", "13:52", "17:28"))
-        timesheetEntries.add(TimesheetDataEntry("Sfendali", "Athens", "14:52", "18:28"))
-        timesheetEntries.add(TimesheetDataEntry("Alexandroupoli", "Thessaloniki", "15:52", "19:28"))
+        timesheetEntries.addAll(DataFileBrowser(this).getTimesheets(stationFrom, stationTo, date))
 
         rec_search_layout.layoutManager = LinearLayoutManager(this)
         rec_search_layout.adapter = TimesheetAdapter(timesheetEntries)
-
-        //Log.d("Ose Application", intent.getStringExtra("TimesheetActivity.SEARCH_FROM"))
-        //Log.d("Ose Application", intent.getStringExtra("TimesheetActivity.SEARCH_TO"))
-        //Log.d("Ose Application", intent.getStringExtra("TimesheetActivity.SEARCH_DATE"))
     }
 }

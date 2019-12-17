@@ -27,7 +27,7 @@ class TimesheetAdapter(val items: ArrayList<Any>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val obj = items.get(position)
+        val obj = items[position]
 
         when (holder) {
             is TimesheetDataHolder -> {
@@ -42,14 +42,10 @@ class TimesheetAdapter(val items: ArrayList<Any>) :
         }
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount(): Int = items.size
 
-    override fun getItemViewType(position: Int): Int {
-        when {
-            position != 0 -> return R.layout.holder_timesheet_data
-            else -> return R.layout.holder_timesheet_header
-        }
+    override fun getItemViewType(position: Int): Int = when {
+        position != 0 -> R.layout.holder_timesheet_data
+        else -> R.layout.holder_timesheet_header
     }
 }

@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class SearchActivity : AppCompatActivity() {
-    private val stations = listOf("Athens", "Sfendali", "Acharnai")
+    private val stations = DataFileBrowser(this).getAllStations()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,10 +23,10 @@ class SearchActivity : AppCompatActivity() {
         super.onPostCreate(savedInstanceState)
 
         // Click listener for "search" button
-        btn_search_search.setOnClickListener() { onChoice(it) }
+        btn_search_search.setOnClickListener { onChoice(it) }
 
         // Click listener for "date" button
-        txt_search_date.setOnClickListener() { onChoice(it) }
+        txt_search_date.setOnClickListener { onChoice(it) }
 
         // Set suggestions for "from" view
         atv_search_from.setAdapter(
