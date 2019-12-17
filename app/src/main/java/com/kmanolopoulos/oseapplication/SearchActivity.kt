@@ -47,11 +47,11 @@ class SearchActivity : AppCompatActivity() {
         )
     }
 
-    fun onChoice(view: View) {
+    private fun onChoice(view: View) {
 
         when (view.id) {
             R.id.btn_search_search -> {
-                if (PerformValidation()) {
+                if (performValidation()) {
 
                     val intent = Intent(this, TimesheetActivity::class.java)
 
@@ -103,12 +103,12 @@ class SearchActivity : AppCompatActivity() {
     // Search to should be in Stations list
     // Search from and search to should not match
     // Date should be valid
-    fun PerformValidation(): Boolean {
+    private fun performValidation(): Boolean {
 
         // Check
         if ((atv_search_from.text.toString() !in stations) ||
             (atv_search_to.text.toString() !in stations) ||
-            (atv_search_from.text.toString().equals(atv_search_to.text.toString())) ||
+            (atv_search_from.text.toString() == atv_search_to.text.toString()) ||
             (txt_search_date.text.toString().isEmpty())
         ) {
             return false

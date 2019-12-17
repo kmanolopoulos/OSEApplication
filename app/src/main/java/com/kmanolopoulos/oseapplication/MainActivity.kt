@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onChoice(view: View) {
-        var intent: Intent
+        val intent: Intent
 
         when (view.id) {
             R.id.btn_main_search -> {
