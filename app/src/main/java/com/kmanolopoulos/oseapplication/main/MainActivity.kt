@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.kmanolopoulos.oseapplication.R
 import com.kmanolopoulos.oseapplication.search.SearchActivity
-import com.kmanolopoulos.oseapplication.timesheet.TimesheetDownload
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.btn_main_synchronize -> {
-                TimesheetDownload(this)
+                MainDownload(this)
                     .startDownload()
             }
             R.id.btn_main_favourite -> {

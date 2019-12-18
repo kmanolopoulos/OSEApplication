@@ -1,4 +1,4 @@
-package com.kmanolopoulos.oseapplication.timesheet
+package com.kmanolopoulos.oseapplication.main
 
 import android.app.DownloadManager
 import android.content.BroadcastReceiver
@@ -8,17 +8,16 @@ import android.content.IntentFilter
 import android.net.Uri
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
-import com.kmanolopoulos.oseapplication.databases.DataFileBrowser
-import com.kmanolopoulos.oseapplication.main.MainActivity
 import com.kmanolopoulos.oseapplication.R
+import com.kmanolopoulos.oseapplication.databases.DataFileBrowser
 import java.io.File
 
 
-class TimesheetDownload(context: Context) {
+class MainDownload(context: Context) {
     private val dldContext = context
     private val dldTimesheet = "https://v-pigadas.herokuapp.com/api/ose/routes"
     private val dldFileString = "/Timesheet.json"
-    private val dldFileClass = File(context.getExternalFilesDir(null), dldFileString)
+    private val dldFileClass = File(dldContext.getExternalFilesDir(null), dldFileString)
     private var dldId = 0L
 
     //
@@ -63,9 +62,10 @@ class TimesheetDownload(context: Context) {
         dldId = manager.enqueue(request)
 
         // Show progress bar during download
-        (dldContext as MainActivity).setProgressStatus(true, dldContext.resources.getString(
-            R.string.downloading
-        ))
+        (dldContext as MainActivity).setProgressStatus(
+            true,
+            dldContext.resources.getString(R.string.downloading)
+        )
 
         // Register a listener for catching download finish
         dldContext.registerReceiver(
@@ -82,14 +82,13 @@ class TimesheetDownload(context: Context) {
         dldContext.unregisterReceiver(onDownloadComplete)
 
         // Update progress bar after download & before process
-        (dldContext as MainActivity).setProgressStatus(true, dldContext.resources.getString(
-            R.string.processing
-        ))
+        (dldContext as MainActivity).setProgressStatus(
+            true,
+            dldContext.resources.getString(R.string.processing)
+        )
 
         // Update database with JSON data
-        val message = DataFileBrowser(
-            dldContext
-        )
+        val message = DataFileBrowser(dldContext)
             .parseJsonData(dldFileClass)
 
         // Hide progress bar after process
