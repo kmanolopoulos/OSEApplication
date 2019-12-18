@@ -1,4 +1,4 @@
-package com.kmanolopoulos.oseapplication
+package com.kmanolopoulos.oseapplication.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.kmanolopoulos.oseapplication.R
+import com.kmanolopoulos.oseapplication.search.SearchActivity
+import com.kmanolopoulos.oseapplication.timesheet.TimesheetDownload
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +38,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.btn_main_synchronize -> {
-                TimesheetDownload(this).startDownload()
+                TimesheetDownload(this)
+                    .startDownload()
             }
             R.id.btn_main_favourite -> {
 

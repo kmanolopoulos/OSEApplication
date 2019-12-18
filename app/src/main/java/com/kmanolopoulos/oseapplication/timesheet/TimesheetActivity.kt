@@ -1,8 +1,10 @@
-package com.kmanolopoulos.oseapplication
+package com.kmanolopoulos.oseapplication.timesheet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kmanolopoulos.oseapplication.databases.DataFileBrowser
+import com.kmanolopoulos.oseapplication.R
 import kotlinx.android.synthetic.main.activity_timesheet.*
 
 class TimesheetActivity : AppCompatActivity() {
@@ -21,9 +23,15 @@ class TimesheetActivity : AppCompatActivity() {
         val timesheetEntries: ArrayList<Any> = ArrayList()
 
         timesheetEntries.add(TimesheetHeaderEntry())
-        timesheetEntries.addAll(DataFileBrowser(this).getTimesheets(stationFrom, stationTo, date))
+        timesheetEntries.addAll(
+            DataFileBrowser(
+                this
+            ).getTimesheets(stationFrom, stationTo, date))
 
         rec_search_layout.layoutManager = LinearLayoutManager(this)
-        rec_search_layout.adapter = TimesheetAdapter(timesheetEntries)
+        rec_search_layout.adapter =
+            TimesheetAdapter(
+                timesheetEntries
+            )
     }
 }

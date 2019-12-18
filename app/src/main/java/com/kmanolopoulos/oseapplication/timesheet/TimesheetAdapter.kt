@@ -1,8 +1,9 @@
-package com.kmanolopoulos.oseapplication
+package com.kmanolopoulos.oseapplication.timesheet
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.kmanolopoulos.oseapplication.R
 
 class TimesheetAdapter(val items: ArrayList<Any>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -17,11 +18,15 @@ class TimesheetAdapter(val items: ArrayList<Any>) :
 
         when (viewType) {
             R.layout.holder_timesheet_data -> {
-                return TimesheetDataHolder(view)
+                return TimesheetDataHolder(
+                    view
+                )
             }
             /*R.layout.holder_timesheet_data*/
             else -> {
-                return TimesheetHeaderHolder(view)
+                return TimesheetHeaderHolder(
+                    view
+                )
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.kmanolopoulos.oseapplication
+package com.kmanolopoulos.oseapplication.timesheet
 
 import android.app.DownloadManager
 import android.content.BroadcastReceiver
@@ -8,6 +8,9 @@ import android.content.IntentFilter
 import android.net.Uri
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
+import com.kmanolopoulos.oseapplication.databases.DataFileBrowser
+import com.kmanolopoulos.oseapplication.main.MainActivity
+import com.kmanolopoulos.oseapplication.R
 import java.io.File
 
 
@@ -60,7 +63,9 @@ class TimesheetDownload(context: Context) {
         dldId = manager.enqueue(request)
 
         // Show progress bar during download
-        (dldContext as MainActivity).setProgressStatus(true, dldContext.resources.getString(R.string.downloading))
+        (dldContext as MainActivity).setProgressStatus(true, dldContext.resources.getString(
+            R.string.downloading
+        ))
 
         // Register a listener for catching download finish
         dldContext.registerReceiver(
@@ -77,10 +82,15 @@ class TimesheetDownload(context: Context) {
         dldContext.unregisterReceiver(onDownloadComplete)
 
         // Update progress bar after download & before process
-        (dldContext as MainActivity).setProgressStatus(true, dldContext.resources.getString(R.string.processing))
+        (dldContext as MainActivity).setProgressStatus(true, dldContext.resources.getString(
+            R.string.processing
+        ))
 
         // Update database with JSON data
-        val message = DataFileBrowser(dldContext).parseJsonData(dldFileClass)
+        val message = DataFileBrowser(
+            dldContext
+        )
+            .parseJsonData(dldFileClass)
 
         // Hide progress bar after process
         dldContext.setProgressStatus(false, "")

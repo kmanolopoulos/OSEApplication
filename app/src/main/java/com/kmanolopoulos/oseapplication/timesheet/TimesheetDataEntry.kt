@@ -1,4 +1,4 @@
-package com.kmanolopoulos.oseapplication
+package com.kmanolopoulos.oseapplication.timesheet
 
 data class TimesheetDataEntry(
     var stationFrom: String,

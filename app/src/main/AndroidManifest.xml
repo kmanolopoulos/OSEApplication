@@ -14,12 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TimesheetActivity"
+            android:name=".timesheet.TimesheetActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".SearchActivity"
+            android:name=".search.SearchActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

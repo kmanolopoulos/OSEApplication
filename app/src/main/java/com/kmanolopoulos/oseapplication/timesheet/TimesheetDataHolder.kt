@@ -1,4 +1,4 @@
-package com.kmanolopoulos.oseapplication
+package com.kmanolopoulos.oseapplication.timesheet
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

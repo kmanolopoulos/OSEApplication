@@ -1,4 +1,4 @@
-package com.kmanolopoulos.oseapplication
+package com.kmanolopoulos.oseapplication.search
 
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -7,12 +7,18 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.kmanolopoulos.oseapplication.databases.DataFileBrowser
+import com.kmanolopoulos.oseapplication.R
+import com.kmanolopoulos.oseapplication.timesheet.TimesheetActivity
 import kotlinx.android.synthetic.main.activity_search.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class SearchActivity : AppCompatActivity() {
-    private val stations = DataFileBrowser(this).getAllStations()
+    private val stations = DataFileBrowser(
+        this
+    )
+        .getAllStations()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
