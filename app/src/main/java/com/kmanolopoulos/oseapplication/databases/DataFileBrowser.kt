@@ -3,14 +3,12 @@ package com.kmanolopoulos.oseapplication.databases
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
-import com.kmanolopoulos.oseapplication.R
 import com.kmanolopoulos.oseapplication.timesheet.TimesheetDataEntry
-import java.io.File
 
 
-class DataFileBrowser(private val context: Context) :
-    SQLiteOpenHelper(context,
+class DataFileBrowser(val context: Context) :
+    SQLiteOpenHelper(
+        context,
         DATABASE_NAME, null,
         DATABASE_VERSION
     ) {
@@ -21,25 +19,17 @@ class DataFileBrowser(private val context: Context) :
     // Called when database is updated through versions
     override fun onUpgrade(dbase: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {}
 
-    // Parse JSON file data to rebuild database data
-    fun parseJsonData(jsonFile: File): String {
-        try {
-            jsonFile.forEachLine { Log.v("FILE", it) }
-        } catch (e: Exception) {
-            return context.resources.getString(R.string.file_not_downloaded)
-        }
-
-        return context.resources.getString(R.string.file_wrong_format)
-        //return context.resources.getString(R.string.file_ok)
-    }
-
     // TODO: Implement this method based on real data
     fun getAllStations(): List<String> {
         return listOf("Athens", "Sfendali", "Acharnai")
     }
 
     // TODO: Implement this method based on real data
-    fun getTimesheets(stationFrom: String, stationTo: String, date: String): List<TimesheetDataEntry> {
+    fun getTimesheets(
+        stationFrom: String,
+        stationTo: String,
+        date: String
+    ): List<TimesheetDataEntry> {
         var entries = ArrayList<TimesheetDataEntry>()
 
         entries.clear()

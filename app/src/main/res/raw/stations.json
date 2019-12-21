@@ -1,0 +1,821 @@
+{
+  "oseTravel" : {
+    "stations" : [ {
+      "code" : "ΑΓΓΕ",
+      "label_en" : "Aggeie",
+      "label_gr" : "Αγγείαι",
+      "latitude" : 39.0905685,
+      "longitude" : 22.1905403
+    }, {
+      "code" : "ΑΔΕΝ",
+      "label_en" : "Adendro",
+      "label_gr" : "Άδενδρο",
+      "latitude" : 40.6743202,
+      "longitude" : 22.6026993
+    }, {
+      "code" : "ΑΘΗΝ",
+      "label_en" : "Athens",
+      "label_gr" : "Αθήνα",
+      "latitude" : 37.9926109,
+      "longitude" : 23.7208405
+    }, {
+      "code" : "ΑΘΩΜ",
+      "label_en" : "Agios Thomas",
+      "label_gr" : "Αγ. Θωμάς",
+      "latitude" : 38.2818413,
+      "longitude" : 23.66712
+    }, {
+      "code" : "ΑΙΓΝ",
+      "label_en" : "Aiginio",
+      "label_gr" : "Αιγίνιο",
+      "latitude" : 40.5116615,
+      "longitude" : 22.54072
+    }, {
+      "code" : "ΑΚΡΟ",
+      "label_en" : "Akrolimni",
+      "label_gr" : "Ακρολίμνι",
+      "latitude" : 41.1926689,
+      "longitude" : 22.7794495
+    }, {
+      "code" : "ΑΛΑΛ",
+      "label_en" : "Alalkomenai",
+      "label_gr" : "Αλαλκομεναί",
+      "latitude" : 38.4082909,
+      "longitude" : 22.9821701
+    }, {
+      "code" : "ΑΛΕΛ",
+      "label_en" : "Alexandroupoli Port",
+      "label_gr" : "Αλεξανδρούπολη Λιμάνι",
+      "latitude" : 40.8450966,
+      "longitude" : 25.8786602
+    }, {
+      "code" : "ΑΛΕΝ",
+      "label_en" : "Alexandreia",
+      "label_gr" : "Αλεξάνδρεια",
+      "latitude" : 40.6205215,
+      "longitude" : 22.4429207
+    }, {
+      "code" : "ΑΛΙΑ",
+      "label_en" : "Aliartos",
+      "label_gr" : "Αλίαρτος",
+      "latitude" : 38.3796082,
+      "longitude" : 23.1118507
+    }, {
+      "code" : "ΑΜΥΝ",
+      "label_en" : "Amyntaio",
+      "label_gr" : "Αμύνταιο",
+      "latitude" : 40.6908989,
+      "longitude" : 21.6863003
+    }, {
+      "code" : "ΑΜΦΙ",
+      "label_en" : "Amfikleia",
+      "label_gr" : "Αμφίκλεια",
+      "latitude" : 38.6581802,
+      "longitude" : 22.5946503
+    }, {
+      "code" : "ΑΝΛΕ",
+      "label_en" : "Ano Lekhonia",
+      "label_gr" : "Άνω Λεχώνια",
+      "latitude" : 39.325531,
+      "longitude" : 23.0537891
+    }, {
+      "code" : "ΑΠΑΝ",
+      "label_en" : "Agios Panteleimon",
+      "label_gr" : "Αγ. Παντελεήμων",
+      "latitude" : 40.7268295,
+      "longitude" : 21.7457695
+    }, {
+      "code" : "ΑΡΜΕ",
+      "label_en" : "Armenio",
+      "label_gr" : "Αρμένιο",
+      "latitude" : 39.4842987,
+      "longitude" : 22.6952591
+    }, {
+      "code" : "ΑΡΝΙ",
+      "label_en" : "Arnissa",
+      "label_gr" : "Άρνισσα",
+      "latitude" : 40.7980499,
+      "longitude" : 21.8350506
+    }, {
+      "code" : "ΑΣΤΕ",
+      "label_en" : "Agios Stefanos",
+      "label_gr" : "Αγ. Στέφανος",
+      "latitude" : 38.1403389,
+      "longitude" : 23.8593998
+    }, {
+      "code" : "ΑΥΛΩ",
+      "label_en" : "Avlona",
+      "label_gr" : "Αυλώνα",
+      "latitude" : 38.2499809,
+      "longitude" : 23.6956196
+    }, {
+      "code" : "ΑΧΑΡ",
+      "label_en" : "Acharnes",
+      "label_gr" : "Αχαρνές",
+      "latitude" : 38.0803185,
+      "longitude" : 23.7439098
+    }, {
+      "code" : "ΒΕΛΕ",
+      "label_en" : "Velestino",
+      "label_gr" : "Βελεστίνο",
+      "latitude" : 39.3903503,
+      "longitude" : 22.7600307
+    }, {
+      "code" : "ΒΕΝΝ",
+      "label_en" : "Venna",
+      "label_gr" : "Βέννα",
+      "latitude" : 41.023201,
+      "longitude" : 25.5086098
+    }, {
+      "code" : "ΒΕΡΟ",
+      "label_en" : "Veroia",
+      "label_gr" : "Βέροια",
+      "latitude" : 40.5393906,
+      "longitude" : 22.2135906
+    }, {
+      "code" : "ΒΕΥΗ",
+      "label_en" : "Vevi",
+      "label_gr" : "Βεύη",
+      "latitude" : 40.7741013,
+      "longitude" : 21.5673409
+    }, {
+      "code" : "ΒΟΛΟ",
+      "label_en" : "Volos",
+      "label_gr" : "Βόλος",
+      "latitude" : 39.3646889,
+      "longitude" : 22.9364395
+    }, {
+      "code" : "ΒΥΡΩ",
+      "label_en" : "Vyronia",
+      "label_gr" : "Βυρώνεια",
+      "latitude" : 41.2622299,
+      "longitude" : 23.2535095
+    }, {
+      "code" : "ΓΑΖΩ",
+      "label_en" : "Gazoros",
+      "label_gr" : "Γάζωρος",
+      "latitude" : 41.0166893,
+      "longitude" : 23.7659206
+    }, {
+      "code" : "ΓΑΛΛ",
+      "label_en" : "Gallikos",
+      "label_gr" : "Γαλλικός",
+      "latitude" : 40.860199,
+      "longitude" : 22.8862095
+    }, {
+      "code" : "ΔΑΥΛ",
+      "label_en" : "Davleia",
+      "label_gr" : "Δαυλεία",
+      "latitude" : 38.5344391,
+      "longitude" : 22.8122902
+    }, {
+      "code" : "ΔΙΑΚ",
+      "label_en" : "Diakofto",
+      "label_gr" : "Διακοφτό",
+      "latitude" : 38.1917496,
+      "longitude" : 22.1979809
+    }, {
+      "code" : "ΔΙΔΥ",
+      "label_en" : "Didymoteichon",
+      "label_gr" : "Διδυμότειχο",
+      "latitude" : 41.3529091,
+      "longitude" : 26.51297
+    }, {
+      "code" : "ΔΙΛΟ",
+      "label_en" : "Dilofos",
+      "label_gr" : "Δίλοφος",
+      "latitude" : 41.6930695,
+      "longitude" : 26.3782597
+    }, {
+      "code" : "ΔΚΑΙ",
+      "label_en" : "Dikaia",
+      "label_gr" : "Δίκαια",
+      "latitude" : 41.7066498,
+      "longitude" : 26.3025494
+    }, {
+      "code" : "ΔΟΙΡ",
+      "label_en" : "Doirani",
+      "label_gr" : "Δοϊράνη",
+      "latitude" : 41.1727715,
+      "longitude" : 22.7720699
+    }, {
+      "code" : "ΔΟΜΟ",
+      "label_en" : "Domokos",
+      "label_gr" : "Δομοκός",
+      "latitude" : 39.1804085,
+      "longitude" : 22.2859802
+    }, {
+      "code" : "ΔΡΑΜ",
+      "label_en" : "Drama",
+      "label_gr" : "Δράμα",
+      "latitude" : 41.1403503,
+      "longitude" : 24.1470108
+    }, {
+      "code" : "ΕΔΕΣ",
+      "label_en" : "Edessa",
+      "label_gr" : "Έδεσσα",
+      "latitude" : 40.80896,
+      "longitude" : 22.0512409
+    }, {
+      "code" : "ΘΕΣΣ",
+      "label_en" : "Thessaloniki",
+      "label_gr" : "Θεσσαλονίκη",
+      "latitude" : 40.6444092,
+      "longitude" : 22.9297791
+    }, {
+      "code" : "ΘΗΒΑ",
+      "label_en" : "Thiva",
+      "label_gr" : "Θήβα",
+      "latitude" : 38.3297386,
+      "longitude" : 23.3187199
+    }, {
+      "code" : "ΙΑΣΜ",
+      "label_en" : "Iasmos",
+      "label_gr" : "Ίασμος",
+      "latitude" : 41.1259308,
+      "longitude" : 25.1861992
+    }, {
+      "code" : "ΚΑΛΑ",
+      "label_en" : "Kalambaka",
+      "label_gr" : "Καλαμπάκα",
+      "latitude" : 39.7030602,
+      "longitude" : 21.6251106
+    }, {
+      "code" : "ΚΑΛΒ",
+      "label_en" : "Kalavryta",
+      "label_gr" : "Καλάβρυτα",
+      "latitude" : 38.0335007,
+      "longitude" : 22.1099892
+    }, {
+      "code" : "ΚΑΛΙ",
+      "label_en" : "Kallindia",
+      "label_gr" : "Καλίνδοια",
+      "latitude" : 41.1170616,
+      "longitude" : 22.7832203
+    }, {
+      "code" : "ΚΑΡΔ",
+      "label_en" : "Karditsa",
+      "label_gr" : "Καρδίτσα",
+      "latitude" : 39.3540306,
+      "longitude" : 21.9149704
+    }, {
+      "code" : "ΚΑΣΣ",
+      "label_en" : "Kastanoussa",
+      "label_gr" : "Καστανούσσα",
+      "latitude" : 41.2760887,
+      "longitude" : 22.8959103
+    }, {
+      "code" : "ΚΑΤΕ",
+      "label_en" : "Katerini",
+      "label_gr" : "Κατερίνη",
+      "latitude" : 40.269001,
+      "longitude" : 22.5310497
+    }, {
+      "code" : "ΚΑΧΡ",
+      "label_en" : "Kato Acharnai",
+      "label_gr" : "Κάτω Αχαρναί",
+      "latitude" : 38.0538597,
+      "longitude" : 23.7326508
+    }, {
+      "code" : "ΚΕΡΠ",
+      "label_en" : "Kerpini",
+      "label_gr" : "Κερπίνη",
+      "latitude" : 38.0528183,
+      "longitude" : 22.14468
+    }, {
+      "code" : "ΚΗΦΙ",
+      "label_en" : "Kifissos",
+      "label_gr" : "Κηφισσός",
+      "latitude" : 38.5860291,
+      "longitude" : 22.7447395
+    }, {
+      "code" : "ΚΙΛΚ",
+      "label_en" : "Kilkis",
+      "label_gr" : "Κιλκίς",
+      "latitude" : 40.9583511,
+      "longitude" : 22.8570995
+    }, {
+      "code" : "ΚΙΡΚ",
+      "label_en" : "Kirki",
+      "label_gr" : "Κίρκη",
+      "latitude" : 40.9755707,
+      "longitude" : 25.7976799
+    }, {
+      "code" : "ΚΟΜΟ",
+      "label_en" : "Komotini",
+      "label_gr" : "Κομοτηνή",
+      "latitude" : 41.1100388,
+      "longitude" : 25.3939991
+    }, {
+      "code" : "ΚΟΡΟ",
+      "label_en" : "Korinos",
+      "label_gr" : "Κορινός",
+      "latitude" : 40.3161507,
+      "longitude" : 22.5775394
+    }, {
+      "code" : "ΚΟΥΛ",
+      "label_en" : "Koulata",
+      "label_gr" : "Κουλάτα",
+      "latitude" : 41.3918686,
+      "longitude" : 23.3617191
+    }, {
+      "code" : "ΛΑΡΙ",
+      "label_en" : "Larissa",
+      "label_gr" : "Λάρισα",
+      "latitude" : 39.629509,
+      "longitude" : 22.42272
+    }, {
+      "code" : "ΛΕΒΑ",
+      "label_en" : "Levadia",
+      "label_gr" : "Λειβαδειά",
+      "latitude" : 38.4705696,
+      "longitude" : 22.9266396
+    }, {
+      "code" : "ΛΕΙΑ",
+      "label_en" : "Lianokladi",
+      "label_gr" : "Λειανοκλάδι",
+      "latitude" : 38.8909607,
+      "longitude" : 22.3721104
+    }, {
+      "code" : "ΛΕΠΤ",
+      "label_en" : "Leptokarya",
+      "label_gr" : "Λεπτοκαρυά",
+      "latitude" : 40.0586319,
+      "longitude" : 22.5655499
+    }, {
+      "code" : "ΛΕΥΚ",
+      "label_en" : "Lefkothea Alistratis",
+      "label_gr" : "Λευκοθέα Αλιστράτης",
+      "latitude" : 41.0124016,
+      "longitude" : 23.9340096
+    }, {
+      "code" : "ΛΙΒΑ",
+      "label_en" : "Livadia Kerkinis",
+      "label_gr" : "Λεβαδειά Κερκίνης",
+      "latitude" : 41.2549515,
+      "longitude" : 23.0710297
+    }, {
+      "code" : "ΛΙΒΕ",
+      "label_en" : "Livera",
+      "label_gr" : "Λιβέρα",
+      "latitude" : 41.1240883,
+      "longitude" : 24.6918201
+    }, {
+      "code" : "ΛΙΛΑ",
+      "label_en" : "Lilaia",
+      "label_gr" : "Λιλαία",
+      "latitude" : 38.6699104,
+      "longitude" : 22.5442696
+    }, {
+      "code" : "ΛΙΤΟ",
+      "label_en" : "Litochoro",
+      "label_gr" : "Λιτόχωρο",
+      "latitude" : 40.125309,
+      "longitude" : 22.5499096
+    }, {
+      "code" : "ΜΑΓΟ",
+      "label_en" : "Magoula Karditsis",
+      "label_gr" : "Μαγούλα Καρδίτσης",
+      "latitude" : 39.4514389,
+      "longitude" : 21.7881393
+    }, {
+      "code" : "ΜΑΔΡ",
+      "label_en" : "Mandraki",
+      "label_gr" : "Μανδράκι",
+      "latitude" : 41.2608719,
+      "longitude" : 23.1403408
+    }, {
+      "code" : "ΜΕΣΟ",
+      "label_en" : "Mesonision",
+      "label_gr" : "Μεσονήσιον",
+      "latitude" : 40.7973709,
+      "longitude" : 21.4732895
+    }, {
+      "code" : "ΜΕΣΠ",
+      "label_en" : "Megalo Spilaio",
+      "label_gr" : "Μεγάλο Σπήλαιο",
+      "latitude" : 38.1104202,
+      "longitude" : 22.16152
+    }, {
+      "code" : "ΜΕΣΤ",
+      "label_en" : "Mesti",
+      "label_gr" : "Μεστή",
+      "latitude" : 40.9669189,
+      "longitude" : 25.6394901
+    }, {
+      "code" : "ΜΕΤΑ",
+      "label_en" : "Metallikos",
+      "label_gr" : "Μεταλλικός",
+      "latitude" : 41.0193405,
+      "longitude" : 22.8029594
+    }, {
+      "code" : "ΜΗΛΕ",
+      "label_en" : "Milee",
+      "label_gr" : "Μηλιές",
+      "latitude" : 39.3267517,
+      "longitude" : 23.1446705
+    }, {
+      "code" : "ΜΟΥΡ",
+      "label_en" : "Mouries",
+      "label_gr" : "Μουριές",
+      "latitude" : 41.2613182,
+      "longitude" : 22.8398895
+    }, {
+      "code" : "ΜΠΛΑ",
+      "label_en" : "Blagoevgrad",
+      "label_gr" : "Μπλαγκόεβγκραντ",
+      "latitude" : 42.013031,
+      "longitude" : 23.0856209
+    }, {
+      "code" : "ΜΠΡΑ",
+      "label_en" : "Bralos",
+      "label_gr" : "Μπράλος",
+      "latitude" : 38.7021408,
+      "longitude" : 22.4577103
+    }, {
+      "code" : "ΝΑΟΥ",
+      "label_en" : "Naoussa",
+      "label_gr" : "Νάουσα",
+      "latitude" : 40.6212997,
+      "longitude" : 22.1339703
+    }, {
+      "code" : "ΝΒΥΣ",
+      "label_en" : "N. Vissa",
+      "label_gr" : "Ν. Βύσσα",
+      "latitude" : 41.5822601,
+      "longitude" : 26.5356693
+    }, {
+      "code" : "ΝΕΟΧ",
+      "label_en" : "Neochorion",
+      "label_gr" : "Νεοχώριο",
+      "latitude" : 41.2205582,
+      "longitude" : 24.6339207
+    }, {
+      "code" : "ΝΕΠΤ",
+      "label_en" : "Neo Petritsi",
+      "label_gr" : "Νέο Πετρίτσι",
+      "latitude" : 41.2697144,
+      "longitude" : 23.2974262
+    }, {
+      "code" : "ΝΙΑΜ",
+      "label_en" : "Microchelidou",
+      "label_gr" : "Μικροχελιδού",
+      "latitude" : 38.1546783,
+      "longitude" : 22.1765594
+    }, {
+      "code" : "ΝΙΚΗ",
+      "label_en" : "Nikiforos",
+      "label_gr" : "Νικηφόρος",
+      "latitude" : 41.1682816,
+      "longitude" : 24.3114796
+    }, {
+      "code" : "ΝΠΟΡ",
+      "label_en" : "Neoi Poroi",
+      "label_gr" : "Νέοι Πόροι",
+      "latitude" : 39.9761009,
+      "longitude" : 22.6386395
+    }, {
+      "code" : "ΝΤΟΥ",
+      "label_en" : "Dupnica",
+      "label_gr" : "Ντούπνιτσα",
+      "latitude" : 42.2612,
+      "longitude" : 23.1040134
+    }, {
+      "code" : "ΝΦΙΛ",
+      "label_en" : "Nea Philadelphia Toumbas",
+      "label_gr" : "Νέα Φιλαδέλφεια Τούμπας",
+      "latitude" : 40.7966194,
+      "longitude" : 22.8488293
+    }, {
+      "code" : "ΞΑΝΘ",
+      "label_en" : "Xanthi",
+      "label_gr" : "Ξάνθη",
+      "latitude" : 41.1239891,
+      "longitude" : 24.8927708
+    }, {
+      "code" : "ΞΥΝΟ",
+      "label_en" : "Xino Nero",
+      "label_gr" : "Ξινό Νερό",
+      "latitude" : 40.6913681,
+      "longitude" : 21.63377
+    }, {
+      "code" : "ΟΙΝΟ",
+      "label_en" : "Inoi",
+      "label_gr" : "Οινόη",
+      "latitude" : 38.3220596,
+      "longitude" : 23.6096592
+    }, {
+      "code" : "ΟΜΑΛ",
+      "label_en" : "Omalo Thrakis",
+      "label_gr" : "Ομαλό Θράκης",
+      "latitude" : 41.2614288,
+      "longitude" : 23.1962299
+    }, {
+      "code" : "ΟΡΕΣ",
+      "label_en" : "Orestiada",
+      "label_gr" : "Ορεστιάδα",
+      "latitude" : 41.503109,
+      "longitude" : 26.5371799
+    }, {
+      "code" : "ΠΑΘΕ",
+      "label_en" : "Agioi Theodoroi N.",
+      "label_gr" : "Άγιοι Θεόδωροι",
+      "latitude" : 37.9331703,
+      "longitude" : 23.1369495
+    }, {
+      "code" : "ΠΑΛΦ",
+      "label_en" : "Palaeofarsalos",
+      "label_gr" : "Παλαιοφάρσαλος",
+      "latitude" : 39.3127518,
+      "longitude" : 22.24366
+    }, {
+      "code" : "ΠΑΝΓ",
+      "label_en" : "Agioi Anarghiroi N.",
+      "label_gr" : "Άγιοι Ανάργυροι",
+      "latitude" : 38.0217896,
+      "longitude" : 23.7184296
+    }, {
+      "code" : "ΠΑΝΛ",
+      "label_en" : "Ano Liosia N.",
+      "label_gr" : "Άνω Λιόσια",
+      "latitude" : 38.0707397,
+      "longitude" : 23.7103691
+    }, {
+      "code" : "ΠΑΡΑ",
+      "label_en" : "Paranesti",
+      "label_gr" : "Παρανέστι",
+      "latitude" : 41.2656288,
+      "longitude" : 24.5016994
+    }, {
+      "code" : "ΠΑΡΟ",
+      "label_en" : "Parori",
+      "label_gr" : "Παρόρι",
+      "latitude" : 38.5738716,
+      "longitude" : 22.7619705
+    }, {
+      "code" : "ΠΑΤΡ",
+      "label_en" : "Patra",
+      "label_gr" : "Πάτρα",
+      "latitude" : 38.2496796,
+      "longitude" : 21.7347202
+    }, {
+      "code" : "ΠΕΔΙ",
+      "label_en" : "Pedino",
+      "label_gr" : "Πεδινό",
+      "latitude" : 40.9039001,
+      "longitude" : 22.8818398
+    }, {
+      "code" : "ΠΕΠΛ",
+      "label_en" : "Peplos",
+      "label_gr" : "Πέπλος",
+      "latitude" : 40.9569206,
+      "longitude" : 26.2751198
+    }, {
+      "code" : "ΠΚΙΑ",
+      "label_en" : "Kiato",
+      "label_gr" : "Κιάτο",
+      "latitude" : 38.0139885,
+      "longitude" : 22.7347794
+    }, {
+      "code" : "ΠΛΑΝ",
+      "label_en" : "Platania",
+      "label_gr" : "Πλατάνια",
+      "latitude" : 41.2044601,
+      "longitude" : 24.4216003
+    }, {
+      "code" : "ΠΛΤΥ",
+      "label_en" : "Platy",
+      "label_gr" : "Πλατύ",
+      "latitude" : 40.6372719,
+      "longitude" : 22.5307693
+    }, {
+      "code" : "ΠΟΛΘ",
+      "label_en" : "Polyanthos",
+      "label_gr" : "Πολύανθος",
+      "latitude" : 41.1258316,
+      "longitude" : 25.2278004
+    }, {
+      "code" : "ΠΟΣΤ",
+      "label_en" : "Polysitos",
+      "label_gr" : "Πολύσιτος",
+      "latitude" : 41.1115799,
+      "longitude" : 25.0207195
+    }, {
+      "code" : "ΠΡΟΜ",
+      "label_en" : "Promachonas",
+      "label_gr" : "Προμαχώνας",
+      "latitude" : 41.362999,
+      "longitude" : 23.3557091
+    }, {
+      "code" : "ΠΡΟΥ",
+      "label_en" : "Rouf",
+      "label_gr" : "Ρουφ",
+      "latitude" : 37.9744301,
+      "longitude" : 23.7042294
+    }, {
+      "code" : "ΠΥΘΙ",
+      "label_en" : "Pythion of Didymoteicho",
+      "label_gr" : "Πύθιο Διδυμοτείχου",
+      "latitude" : 41.3703384,
+      "longitude" : 26.6217594
+    }, {
+      "code" : "ΠΥΡΓ",
+      "label_en" : "Pyrgos Ilias",
+      "label_gr" : "Πύργος Ηλείας",
+      "latitude" : 37.6760101,
+      "longitude" : 21.4354401
+    }, {
+      "code" : "ΡΑΨΑ",
+      "label_en" : "Rapsani",
+      "label_gr" : "Ραψάνη",
+      "latitude" : 39.9002914,
+      "longitude" : 22.6160393
+    }, {
+      "code" : "ΡΙΟΝ",
+      "label_en" : "Rio",
+      "label_gr" : "Ρίο",
+      "latitude" : 38.3007088,
+      "longitude" : 21.7817707
+    }, {
+      "code" : "ΡΟΔΠ",
+      "label_en" : "Rodopolis",
+      "label_gr" : "Ροδόπολις",
+      "latitude" : 41.2589989,
+      "longitude" : 22.9988308
+    }, {
+      "code" : "ΣΑΝΤ",
+      "label_en" : "Sandanski",
+      "label_gr" : "Σαντάνσκι",
+      "latitude" : 41.5376701,
+      "longitude" : 23.2504196
+    }, {
+      "code" : "ΣΕΡΡ",
+      "label_en" : "Serres",
+      "label_gr" : "Σέρρες",
+      "latitude" : 41.0738106,
+      "longitude" : 23.53619
+    }, {
+      "code" : "ΣΙΔΗ",
+      "label_en" : "Sidirokastro",
+      "label_gr" : "Σιδηρόκαστρο",
+      "latitude" : 41.2279663,
+      "longitude" : 23.3761387
+    }, {
+      "code" : "ΣΙΝΔ",
+      "label_en" : "Sindos",
+      "label_gr" : "Σίνδος",
+      "latitude" : 40.6741791,
+      "longitude" : 22.8054905
+    }, {
+      "code" : "ΣΚΑΧ",
+      "label_en" : "SKA (Rail center of Acharnes)",
+      "label_gr" : "ΣΚΑ (Κέντρο Αχαρναί)",
+      "latitude" : 38.0683517,
+      "longitude" : 23.7375298
+    }, {
+      "code" : "ΣΚΟΠ",
+      "label_en" : "Skopje",
+      "label_gr" : "Σκόπια",
+      "latitude" : 41.9781494,
+      "longitude" : 21.4564705
+    }, {
+      "code" : "ΣΚΟΤ",
+      "label_en" : "Skotoussa",
+      "label_gr" : "Σκοτούσσα",
+      "latitude" : 41.1300011,
+      "longitude" : 23.3761997
+    }, {
+      "code" : "ΣΚΥΔ",
+      "label_en" : "Skydra",
+      "label_gr" : "Σκύδρα",
+      "latitude" : 40.7680817,
+      "longitude" : 22.1576004
+    }, {
+      "code" : "ΣΟΥΦ",
+      "label_en" : "Soufli",
+      "label_gr" : "Σουφλι",
+      "latitude" : 41.1876183,
+      "longitude" : 26.3016605
+    }, {
+      "code" : "ΣΟΦΑ",
+      "label_en" : "Sofades",
+      "label_gr" : "Σοφάδες",
+      "latitude" : 39.3395195,
+      "longitude" : 22.0920391
+    }, {
+      "code" : "ΣΟΦΙ",
+      "label_en" : "Sofia",
+      "label_gr" : "Σόφια",
+      "latitude" : 42.7128716,
+      "longitude" : 23.3207493
+    }, {
+      "code" : "ΣΤΑΥ",
+      "label_en" : "Stavroupoli of Xanthi",
+      "label_gr" : "Σταυρούπολη Ξάνθης",
+      "latitude" : 41.1939507,
+      "longitude" : 24.7030106
+    }, {
+      "code" : "ΣΤΡΥ",
+      "label_en" : "Strymonas",
+      "label_gr" : "Στρυμώνας",
+      "latitude" : 41.2623138,
+      "longitude" : 23.3452873
+    }, {
+      "code" : "ΣΥΚΟ",
+      "label_en" : "Sykorrachi",
+      "label_gr" : "Συκορράχη",
+      "latitude" : 40.9743805,
+      "longitude" : 25.7202797
+    }, {
+      "code" : "ΤΑΝΑ",
+      "label_en" : "Tanagra",
+      "label_gr" : "Τανάγρα",
+      "latitude" : 38.3400192,
+      "longitude" : 23.5813999
+    }, {
+      "code" : "ΤΙΘΟ",
+      "label_en" : "Tithorea",
+      "label_gr" : "Τιθορέα",
+      "latitude" : 38.608551,
+      "longitude" : 22.7187805
+    }, {
+      "code" : "ΤΟΞΟ",
+      "label_en" : "Toxotes",
+      "label_gr" : "Τοξότες",
+      "latitude" : 41.0855293,
+      "longitude" : 24.7811203
+    }, {
+      "code" : "ΤΡΙΚ",
+      "label_en" : "Trikala",
+      "label_gr" : "Τρίκαλα",
+      "latitude" : 39.5461502,
+      "longitude" : 21.7633591
+    }, {
+      "code" : "ΤΡΚΛ",
+      "label_en" : "Triklia",
+      "label_gr" : "Τρικλιά",
+      "latitude" : 38.1301498,
+      "longitude" : 22.1671391
+    }, {
+      "code" : "ΤΥΧΕ",
+      "label_en" : "Tychero",
+      "label_gr" : "Τυχερό",
+      "latitude" : 41.0357285,
+      "longitude" : 26.2919998
+    }, {
+      "code" : "ΥΨΗΛ",
+      "label_en" : "Ypsilantis",
+      "label_gr" : "Υψηλάντης",
+      "latitude" : 38.3870697,
+      "longitude" : 23.0214195
+    }, {
+      "code" : "ΦΑΝΑ",
+      "label_en" : "Fanari Karditsas",
+      "label_gr" : "Φανάρι Καρδίτσας",
+      "latitude" : 39.4169006,
+      "longitude" : 21.8173008
+    }, {
+      "code" : "ΦΕΡΡ",
+      "label_en" : "Ferres",
+      "label_gr" : "Φέρρες",
+      "latitude" : 40.8912811,
+      "longitude" : 26.1850204
+    }, {
+      "code" : "ΦΛΩΡ",
+      "label_en" : "Florina",
+      "label_gr" : "Φλώρινα",
+      "latitude" : 40.7814407,
+      "longitude" : 21.4150391
+    }, {
+      "code" : "ΦΩΤΟ",
+      "label_en" : "Fotolivos",
+      "label_gr" : "Φωτολίβος",
+      "latitude" : 41.0590591,
+      "longitude" : 24.0479507
+    }, {
+      "code" : "ΧΑΙΡ",
+      "label_en" : "Cheronia",
+      "label_gr" : "Χαιρώνεια",
+      "latitude" : 38.508049,
+      "longitude" : 22.8583202
+    }, {
+      "code" : "ΧΕΡΣ",
+      "label_en" : "Hersos",
+      "label_gr" : "Χέρσος",
+      "latitude" : 41.0905991,
+      "longitude" : 22.7833691
+    }, {
+      "code" : "ΧΣ40",
+      "label_en" : "Sidirochori Serron",
+      "label_gr" : "Σιδηροχώρι Σερρών",
+      "latitude" : 41.2452202,
+      "longitude" : 23.0223503
+    }, {
+      "code" : "ΧΣ70",
+      "label_en" : "Zachloritika",
+      "label_gr" : "Ζαχλωρίτικα",
+      "latitude" : 38.093399,
+      "longitude" : 22.1648998
+    } ]
+  }
+}
