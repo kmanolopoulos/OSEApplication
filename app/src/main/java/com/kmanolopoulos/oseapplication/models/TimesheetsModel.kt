@@ -1,13 +1,10 @@
 package com.kmanolopoulos.oseapplication.models
 
-import android.content.Context
-
-class TimesheetsModel(val context: Context) {
-
-    // Parse JSON file data to rebuild database data
-    // TODO: Implement this method
-    fun parseJsonData(jsonData: String): ParsingModel {
-        return ParsingModel(context, ParsingModel.Values.FILE_WRONG_FORMAT)
-        //return ParsingModel(context, ParsingModel.Values.FILE_OK)
-    }
-}
+data class TimesheetsModel(
+    val trainId: String,
+    val date: String,
+    val from: String,
+    val timeFrom: String,
+    val to: String,
+    val timeTo: String
+)

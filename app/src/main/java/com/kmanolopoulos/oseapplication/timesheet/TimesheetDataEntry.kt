@@ -5,6 +5,4 @@ data class TimesheetDataEntry(
     var stationTo: String,
     var timeFrom: String,
     var timeTo: String
-) {
-
-}
+)

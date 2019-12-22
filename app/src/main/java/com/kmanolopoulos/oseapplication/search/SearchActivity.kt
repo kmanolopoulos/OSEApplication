@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.kmanolopoulos.oseapplication.databases.DataFileBrowser
 import com.kmanolopoulos.oseapplication.R
 import com.kmanolopoulos.oseapplication.timesheet.TimesheetActivity
 import kotlinx.android.synthetic.main.activity_search.*
@@ -15,10 +14,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class SearchActivity : AppCompatActivity() {
-    private val stations = DataFileBrowser(
-        this
-    )
-        .getAllStations()
+    private val stations = SearchStations(this).getStations()
+    private var stationsNames: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,12 +31,15 @@ class SearchActivity : AppCompatActivity() {
         // Click listener for "date" button
         txt_search_date.setOnClickListener { onChoice(it) }
 
+        // Isolate station names to a list
+        stations.forEach { stationsNames.add(it.labelEn) }
+
         // Set suggestions for "from" view
         atv_search_from.setAdapter(
             ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_dropdown_item_1line,
-                stations
+                stationsNames
             )
         )
 
@@ -48,26 +48,32 @@ class SearchActivity : AppCompatActivity() {
             ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_dropdown_item_1line,
-                stations
+                stationsNames
             )
         )
     }
 
+    //
+    // Click listener for all choices
+    //
     private fun onChoice(view: View) {
 
         when (view.id) {
             R.id.btn_search_search -> {
                 if (performValidation()) {
 
+                    val fromCode = getStationCode(atv_search_from.text.toString())
+                    val toCode = getStationCode(atv_search_to.text.toString())
+
                     val intent = Intent(this, TimesheetActivity::class.java)
 
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_FROM",
-                        atv_search_from.text.toString()
+                        fromCode
                     )
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_TO",
-                        atv_search_to.text.toString()
+                        toCode
                     )
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_DATE",
@@ -112,8 +118,8 @@ class SearchActivity : AppCompatActivity() {
     private fun performValidation(): Boolean {
 
         // Check
-        if ((atv_search_from.text.toString() !in stations) ||
-            (atv_search_to.text.toString() !in stations) ||
+        if ((atv_search_from.text.toString() !in stationsNames) ||
+            (atv_search_to.text.toString() !in stationsNames) ||
             (atv_search_from.text.toString() == atv_search_to.text.toString()) ||
             (txt_search_date.text.toString().isEmpty())
         ) {
@@ -121,6 +127,21 @@ class SearchActivity : AppCompatActivity() {
         }
 
         return true
+    }
+
+    //
+    // Return station code when given station name
+    //
+    private fun getStationCode(stationName: String): String {
+        var result = ""
+
+        stations.forEach {
+            if (it.labelEn == stationName) {
+                result = it.code
+            }
+        }
+
+        return result
     }
 
 }

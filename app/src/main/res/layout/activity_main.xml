@@ -11,6 +11,7 @@
         android:id="@+id/img_main_logo"
         android:layout_width="0dp"
         android:layout_height="45dp"
+        android:contentDescription="@string/logo_description"
         android:src="@drawable/ose_logo_1200px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,38 +22,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/search"
-        app:layout_constraintBottom_toTopOf="@id/btn_main_synchronize"
+        app:layout_constraintBottom_toTopOf="@id/btn_main_favourite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_main_logo" />
-
-    <ProgressBar
-        android:id="@+id/bar_main_progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/btn_main_synchronize"
-        app:layout_constraintEnd_toStartOf="@id/txt_main_progress_message"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_main_search" />
-
-    <TextView
-        android:id="@+id/txt_main_progress_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/bar_main_progress_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/bar_main_progress_bar"
-        app:layout_constraintTop_toTopOf="@id/bar_main_progress_bar" />
-
-    <Button
-        android:id="@+id/btn_main_synchronize"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/synchronize"
-        app:layout_constraintBottom_toTopOf="@id/btn_main_favourite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_main_favourite"

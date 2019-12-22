@@ -3,8 +3,8 @@ package com.kmanolopoulos.oseapplication.timesheet
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.kmanolopoulos.oseapplication.databases.DataFileBrowser
 import com.kmanolopoulos.oseapplication.R
+import com.kmanolopoulos.oseapplication.models.TimesheetsModel
 import kotlinx.android.synthetic.main.activity_timesheet.*
 
 class TimesheetActivity : AppCompatActivity() {
@@ -20,18 +20,29 @@ class TimesheetActivity : AppCompatActivity() {
         val stationFrom = intent.getStringExtra("TimesheetActivity.SEARCH_FROM") ?: ""
         val stationTo = intent.getStringExtra("TimesheetActivity.SEARCH_TO") ?: ""
         val date = intent.getStringExtra("TimesheetActivity.SEARCH_DATE") ?: ""
+
+        val query = TimesheetQuery(stationFrom, stationTo, date)
+
+        TimesheetExecuteQuery(this).startDownload(query)
+    }
+
+    fun onResultsFound(timesheet: List<TimesheetsModel>) {
         val timesheetEntries: ArrayList<Any> = ArrayList()
 
         timesheetEntries.add(TimesheetHeaderEntry())
-        timesheetEntries.addAll(
-            DataFileBrowser(
-                this
-            ).getTimesheets(stationFrom, stationTo, date))
+
+        timesheet.forEach {
+            timesheetEntries.add(
+                TimesheetDataEntry(
+                    it.from,
+                    it.to,
+                    it.timeFrom,
+                    it.timeTo
+                )
+            )
+        }
 
         rec_search_layout.layoutManager = LinearLayoutManager(this)
-        rec_search_layout.adapter =
-            TimesheetAdapter(
-                timesheetEntries
-            )
+        rec_search_layout.adapter = TimesheetAdapter(timesheetEntries)
     }
 }

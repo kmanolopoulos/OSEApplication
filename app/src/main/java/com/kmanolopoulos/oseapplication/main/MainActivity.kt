@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.kmanolopoulos.oseapplication.R
 import com.kmanolopoulos.oseapplication.search.SearchActivity
@@ -21,9 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
-        setProgressStatus(false, "")
         findViewById<Button>(R.id.btn_main_search).setOnClickListener { onChoice(it) }
-        findViewById<Button>(R.id.btn_main_synchronize).setOnClickListener { onChoice(it) }
         findViewById<Button>(R.id.btn_main_favourite).setOnClickListener { onChoice(it) }
         findViewById<Button>(R.id.btn_main_about).setOnClickListener { onChoice(it) }
     }
@@ -36,10 +32,6 @@ class MainActivity : AppCompatActivity() {
                 intent = Intent(this, SearchActivity::class.java)
                 startActivity(intent)
             }
-            R.id.btn_main_synchronize -> {
-                MainDownload(this)
-                    .startDownload()
-            }
             R.id.btn_main_favourite -> {
 
             }
@@ -48,20 +40,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    fun setProgressStatus(status: Boolean, message: String) {
-        when (status) {
-            false -> {
-                findViewById<ProgressBar>(R.id.bar_main_progress_bar).visibility = View.GONE
-                findViewById<TextView>(R.id.txt_main_progress_message).visibility = View.GONE
-            }
-            true -> {
-                findViewById<ProgressBar>(R.id.bar_main_progress_bar).visibility = View.VISIBLE
-                findViewById<TextView>(R.id.txt_main_progress_message).visibility = View.VISIBLE
-            }
-        }
-
-        findViewById<TextView>(R.id.txt_main_progress_message).text = message
-    }
-
 }

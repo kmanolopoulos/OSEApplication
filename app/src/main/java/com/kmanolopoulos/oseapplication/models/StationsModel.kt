@@ -1,14 +1,9 @@
 package com.kmanolopoulos.oseapplication.models
 
-import android.content.Context
-
-class StationsModel(val context: Context) {
-
-    // Parse JSON file data to rebuild database data
-    // TODO: Implement this method
-    fun parseJsonData(jsonData: String): ParsingModel {
-        return ParsingModel(context, ParsingModel.Values.FILE_WRONG_FORMAT)
-        //return ParsingModel(context, ParsingModel.Values.FILE_OK)
-    }
-
-}
+data class StationsModel(
+    val code: String,
+    val labelEn: String,
+    val labelGr: String,
+    val latitude: Double,
+    val longitude: Double
+)
