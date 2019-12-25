@@ -9,6 +9,7 @@ import android.net.Uri
 import androidx.core.content.ContextCompat
 import com.kmanolopoulos.oseapplication.models.TimesheetQueryModel
 import com.kmanolopoulos.oseapplication.models.TimesheetsModel
+import org.json.JSONObject
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.InputStream
@@ -92,14 +93,17 @@ class TimesheetExecuteQuery(val context: Context, val query: TimesheetQueryModel
 
         // Remove temporary file after it was used
         dldTimesheetFileClass.delete()
+
+        // Present results
+        (context as TimesheetActivity).onResultsFound(timesheet)
     }
 
     //
     // Method to read stations from JSON file and store them to database
     //
     private fun getTimesheets() {
-        var jsonData: String
-        var jsonFileStream: InputStream
+        val jsonData: String
+        val jsonFileStream: InputStream
 
         try {
             jsonFileStream = dldTimesheetFileClass.inputStream()
@@ -112,13 +116,39 @@ class TimesheetExecuteQuery(val context: Context, val query: TimesheetQueryModel
         parseJsonData(jsonData)
     }
 
-    // Method to parse JSON data (TODO)
+    //
+    // Method to parse JSON data and get timesheets
+    //
     private fun parseJsonData(jsonData: String) {
-        timesheet = mutableListOf(
-            TimesheetsModel("IC50", query.date, query.stationFrom.labelEn, "11:52", query.stationTo.labelEn, "17:34"),
-            TimesheetsModel("IC50", query.date, query.stationFrom.labelEn, "12:52", query.stationTo.labelEn, "18:34"),
-            TimesheetsModel("IC50", query.date, query.stationFrom.labelEn, "13:52", query.stationTo.labelEn, "19:34")
-        )
-        (context as TimesheetActivity).onResultsFound(timesheet)
+        try {
+            val jsonTimesheetsArray =
+                JSONObject(jsonData).getJSONObject("data").getJSONArray("metabash")
+
+            for (i in 0 until jsonTimesheetsArray.length()) {
+                val jsonTimesheetsObject =
+                    jsonTimesheetsArray.getJSONObject(i).getJSONArray("segments")
+
+                if (jsonTimesheetsObject.length() != 1)
+                    continue
+
+                timesheet.add(
+                    TimesheetsModel(
+                        jsonTimesheetsObject.getJSONObject(0).getString("treno"),
+                        query.date,
+                        query.stationFrom.labelEn,
+                        String.format(
+                            "%.2f", jsonTimesheetsObject.getJSONObject(0).getDouble("wra1")
+                        ).replace('.', ':'),
+                        query.stationTo.labelEn,
+                        String.format(
+                            "%.2f",
+                            jsonTimesheetsObject.getJSONObject(0).getDouble("wra2")
+                        ).replace('.', ':')
+                    )
+                )
+            }
+        } catch (exception: Exception) {
+            timesheet.clear()
+        }
     }
 }

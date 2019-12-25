@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Resources
 import com.kmanolopoulos.oseapplication.R
 import com.kmanolopoulos.oseapplication.models.StationsModel
+import org.json.JSONObject
 import java.io.InputStream
 
 class SearchStations(val context: Context) {
@@ -20,8 +21,8 @@ class SearchStations(val context: Context) {
     // Start parsing of stations resource
     //
     private fun parseStationsFile() {
-        var jsonData: String
-        var jsonFileStream: InputStream
+        val jsonData: String
+        val jsonFileStream: InputStream
 
         try {
             jsonFileStream = context.resources.openRawResource(R.raw.stations)
@@ -32,19 +33,31 @@ class SearchStations(val context: Context) {
         jsonData = jsonFileStream.bufferedReader().use { it.readText() }
 
         parseJsonData(jsonData)
-
-        return
     }
 
     //
-    // Parse Json data to form station (TODO)
+    // Parse Json data to form stations data list
     //
     private fun parseJsonData(jsonData: String) {
-        station = mutableListOf(
-            StationsModel("ΑΘΗΝ", "Athens", "Αθήνα", 37.9926109, 23.7208405),
-            StationsModel("ΘΕΣΣ", "Thessaloniki", "Θεσσαλονίκη", 40.6444092, 22.9297791),
-            StationsModel("ΑΥΛΩ", "Avlona", "Αυλώνα", 38.2499809, 23.6956196)
-        )
+        try {
+            val jsonStationsArray =
+                JSONObject(jsonData).getJSONObject("oseTravel").getJSONArray("stations")
+
+            for (i in 0 until jsonStationsArray.length()) {
+                val jsonStationObject = jsonStationsArray.getJSONObject(i)
+                station.add(
+                    StationsModel(
+                        jsonStationObject.getString("code"),
+                        jsonStationObject.getString("label_en"),
+                        jsonStationObject.getString("label_gr"),
+                        jsonStationObject.getDouble("latitude"),
+                        jsonStationObject.getDouble("longitude")
+                    )
+                )
+            }
+        } catch (exception: Exception) {
+            station.clear()
+        }
     }
 
     //
