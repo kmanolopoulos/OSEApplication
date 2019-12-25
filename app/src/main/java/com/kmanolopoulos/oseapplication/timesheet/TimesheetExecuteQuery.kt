@@ -7,12 +7,13 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
 import androidx.core.content.ContextCompat
+import com.kmanolopoulos.oseapplication.models.TimesheetQueryModel
 import com.kmanolopoulos.oseapplication.models.TimesheetsModel
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.InputStream
 
-class TimesheetExecuteQuery(val context: Context) {
+class TimesheetExecuteQuery(val context: Context, val query: TimesheetQueryModel) {
     private var dldTimesheetId = 0L
     private val dldTimesheetFileString = "/Timesheet.json"
     private val dldTimesheetFileClass =
@@ -39,13 +40,13 @@ class TimesheetExecuteQuery(val context: Context) {
     //
     // Method to start downloading of JSON file with timesheets
     //
-    fun startDownload(query: TimesheetQuery) {
+    fun startDownload() {
 
         val dldTimesheetURL =
             "https://extranet.trainose.gr/epivatikos/public_ticketing/ajax.php?c=dromologia&op=vres_dromologia&apo="
-                .plus(query.stationFrom)
+                .plus(query.stationFrom.code)
                 .plus("&pros=")
-                .plus(query.stationTo)
+                .plus(query.stationTo.code)
                 .plus("&date=")
                 .plus(query.date)
                 .plus("&rtn_date=")
@@ -109,16 +110,14 @@ class TimesheetExecuteQuery(val context: Context) {
         jsonData = jsonFileStream.bufferedReader().use { it.readText() }
 
         parseJsonData(jsonData)
-
-
     }
 
     // Method to parse JSON data (TODO)
     private fun parseJsonData(jsonData: String) {
         timesheet = mutableListOf(
-            TimesheetsModel("IC50", "20-12-2012", "ΑΘΗΝ", "11:52", "ΘΕΣΣ", "17:34"),
-            TimesheetsModel("IC50", "20-12-2012", "ΑΘΗΝ", "12:52", "ΘΕΣΣ", "18:34"),
-            TimesheetsModel("IC50", "20-12-2012", "ΑΘΗΝ", "13:52", "ΘΕΣΣ", "19:34")
+            TimesheetsModel("IC50", query.date, query.stationFrom.labelEn, "11:52", query.stationTo.labelEn, "17:34"),
+            TimesheetsModel("IC50", query.date, query.stationFrom.labelEn, "12:52", query.stationTo.labelEn, "18:34"),
+            TimesheetsModel("IC50", query.date, query.stationFrom.labelEn, "13:52", query.stationTo.labelEn, "19:34")
         )
         (context as TimesheetActivity).onResultsFound(timesheet)
     }

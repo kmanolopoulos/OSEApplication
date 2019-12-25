@@ -8,14 +8,15 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kmanolopoulos.oseapplication.R
+import com.kmanolopoulos.oseapplication.models.StationsModel
 import com.kmanolopoulos.oseapplication.timesheet.TimesheetActivity
 import kotlinx.android.synthetic.main.activity_search.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class SearchActivity : AppCompatActivity() {
-    private val stations = SearchStations(this).getStations()
-    private var stationsNames: MutableList<String> = mutableListOf()
+    private var stationsList: List<StationsModel> = mutableListOf()
+    private var stationsMap: MutableMap<String, StationsModel> = mutableMapOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,15 +32,18 @@ class SearchActivity : AppCompatActivity() {
         // Click listener for "date" button
         txt_search_date.setOnClickListener { onChoice(it) }
 
+        // Instantiate station data
+        stationsList = SearchStations(this).getStations()
+
         // Isolate station names to a list
-        stations.forEach { stationsNames.add(it.labelEn) }
+        stationsList.forEach { stationsMap[it.labelEn] = it }
 
         // Set suggestions for "from" view
         atv_search_from.setAdapter(
             ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_dropdown_item_1line,
-                stationsNames
+                ArrayList(stationsMap.keys)
             )
         )
 
@@ -48,7 +52,7 @@ class SearchActivity : AppCompatActivity() {
             ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_dropdown_item_1line,
-                stationsNames
+                ArrayList(stationsMap.keys)
             )
         )
     }
@@ -62,18 +66,18 @@ class SearchActivity : AppCompatActivity() {
             R.id.btn_search_search -> {
                 if (performValidation()) {
 
-                    val fromCode = getStationCode(atv_search_from.text.toString())
-                    val toCode = getStationCode(atv_search_to.text.toString())
+                    val fromStation = stationsMap[atv_search_from.text.toString()]
+                    val toStation = stationsMap[atv_search_to.text.toString()]
 
                     val intent = Intent(this, TimesheetActivity::class.java)
 
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_FROM",
-                        fromCode
+                        fromStation
                     )
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_TO",
-                        toCode
+                        toStation
                     )
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_DATE",
@@ -94,7 +98,7 @@ class SearchActivity : AppCompatActivity() {
                     calendar.set(Calendar.YEAR, year)
                     calendar.set(Calendar.MONTH, month)
                     calendar.set(Calendar.DAY_OF_MONTH, day)
-                    val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                    val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
                     txt_search_date.text = sdf.format(calendar.time)
                 }
@@ -118,8 +122,8 @@ class SearchActivity : AppCompatActivity() {
     private fun performValidation(): Boolean {
 
         // Check
-        if ((atv_search_from.text.toString() !in stationsNames) ||
-            (atv_search_to.text.toString() !in stationsNames) ||
+        if ((atv_search_from.text.toString() !in stationsMap.keys) ||
+            (atv_search_to.text.toString() !in stationsMap.keys) ||
             (atv_search_from.text.toString() == atv_search_to.text.toString()) ||
             (txt_search_date.text.toString().isEmpty())
         ) {
@@ -127,21 +131,6 @@ class SearchActivity : AppCompatActivity() {
         }
 
         return true
-    }
-
-    //
-    // Return station code when given station name
-    //
-    private fun getStationCode(stationName: String): String {
-        var result = ""
-
-        stations.forEach {
-            if (it.labelEn == stationName) {
-                result = it.code
-            }
-        }
-
-        return result
     }
 
 }
