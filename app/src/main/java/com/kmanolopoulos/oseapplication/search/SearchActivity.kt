@@ -11,12 +11,13 @@ import com.kmanolopoulos.oseapplication.R
 import com.kmanolopoulos.oseapplication.models.StationsModel
 import com.kmanolopoulos.oseapplication.timesheet.TimesheetActivity
 import kotlinx.android.synthetic.main.activity_search.*
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
 
 class SearchActivity : AppCompatActivity() {
     private var stationsList: List<StationsModel> = mutableListOf()
-    private var stationsMap: MutableMap<String, StationsModel> = mutableMapOf()
+    private var stationsMap: HashMap<String, StationsModel> = hashMapOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,18 +67,19 @@ class SearchActivity : AppCompatActivity() {
             R.id.btn_search_search -> {
                 if (performValidation()) {
 
-                    val fromStation = stationsMap[atv_search_from.text.toString()]
-                    val toStation = stationsMap[atv_search_to.text.toString()]
-
                     val intent = Intent(this, TimesheetActivity::class.java)
 
                     intent.putExtra(
+                        "TimesheetActivity.STATIONS_DATA",
+                        stationsMap
+                    )
+                    intent.putExtra(
                         "TimesheetActivity.SEARCH_FROM",
-                        fromStation
+                        atv_search_from.text.toString()
                     )
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_TO",
-                        toStation
+                        atv_search_to.text.toString()
                     )
                     intent.putExtra(
                         "TimesheetActivity.SEARCH_DATE",

@@ -1,7 +1,8 @@
 package com.kmanolopoulos.oseapplication.models
 
 data class TimesheetQueryModel(
-    val stationFrom: StationsModel,
-    val stationTo: StationsModel,
+    val stationsMap: HashMap<String, StationsModel>,
+    val stationFrom: String,
+    val stationTo: String,
     val date: String
 )
